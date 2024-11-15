@@ -3,3 +3,7 @@
     height: 80px;
     border: 1px solid red;
 }
+.main-txt{
+    display: flex;
+    align-items: center;
+}

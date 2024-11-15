@@ -5,6 +5,10 @@
   --clr-gray: #5e6778;
 }
 .container {
+  border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   min-width: min(90%, 790px);
   min-height: 95%;
   background-color: var(--clr-white);

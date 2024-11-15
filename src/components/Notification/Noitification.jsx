@@ -1,4 +1,4 @@
-import './notification.css'
+import './Notification.css'
 export default function Notification() {
   return (<div className='notification-container'>
     <div className="main-txt">
@@ -7,6 +7,6 @@ export default function Notification() {
     </div>
     <div className="time-passed">
       5m ago
-        </div>
+    </div>
   </div>);
 }
