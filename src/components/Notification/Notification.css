@@ -1,9 +1,27 @@
+:root{
+    --Very-Dark:#1C202B;
+    --Red:#F65552;
+}
 .notification-container{
     width: 90%;
-    height: 80px;
-    border: 1px solid red;
+    min-height: 80px;
+    /* border: 1px solid red; */
 }
 .main-txt{
     display: flex;
     align-items: center;
+}
+.main-txt h1{
+    color: var(--Very-Dark);
+}
+.profile-image{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+.dot{
+    width: 8px;
+    height: 8px;
+    background-color: var(--Red);
+    border-radius: 50%;
 }

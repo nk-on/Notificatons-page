@@ -1,12 +1,15 @@
 import './Notification.css'
-export default function Notification() {
-  return (<div className='notification-container'>
+export default function Notification({name,notificationText, timePassed ,isRead,picture}) {
+  return (<div className='notification-container' style={{backgroundColor: isRead ? '#FFF':'#F7FAFD'}}>
     <div className="main-txt">
-      <h1>Mark webber</h1>
-      <p>Followed you</p>
+    
+    <img src={picture} className='profile-image' />
+      <h1>{name}</h1>
+      <p>{notificationText}</p>
+      {!isRead && <div className='dot'></div>}
     </div>
     <div className="time-passed">
-      5m ago
+      {timePassed}
     </div>
   </div>);
 }
