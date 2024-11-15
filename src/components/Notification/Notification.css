@@ -1,5 +1,6 @@
 :root{
     --Very-Dark:#1C202B;
+    --clr-gray:#5E6778;
     --Red:#F65552;
 }
 .notification-container{
@@ -10,9 +11,18 @@
 .main-txt{
     display: flex;
     align-items: center;
+    gap:10px;
+}
+.text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .main-txt h1{
     color: var(--Very-Dark);
+}
+.main-txt p{
+    color: var(--clr-gray);
 }
 .profile-image{
     width: 45px;
