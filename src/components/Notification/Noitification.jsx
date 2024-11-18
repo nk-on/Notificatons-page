@@ -5,6 +5,7 @@ export default function Notification({
   timePassed,
   isRead,
   picture,
+  message
 }) {
   return (
     <div
@@ -20,6 +21,8 @@ export default function Notification({
         {!isRead && <div className="dot"></div>}
       </div>
       <div className="time-passed">{timePassed}</div>
+      {console.log(message)}
+      {message && <div className="message">{message}</div>}
     </div>
   );
 }

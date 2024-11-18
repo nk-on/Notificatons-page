@@ -1,37 +1,55 @@
-:root{
-    --Very-Dark:#1C202B;
-    --clr-gray:#5E6778;
-    --Red:#F65552;
+:root {
+  --Very-Dark: #1c202b;
+  --clr-gray: #5e6778;
+  --Red: #f65552;
+  --white:#fff;
 }
-.notification-container{
-    width: 90%;
-    min-height: 80px;
-    /* border: 1px solid red; */
+.notification-container {
+  width: 90%;
+  min-height: 80px;
+  padding: 5px 5px;
+  border-radius: 8px;
+  /* border: 1px solid red; */
 }
-.main-txt{
-    display: flex;
-    align-items: center;
-    gap:10px;
+.message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--white);
+  /* 7 - Very Light Grey Blue */
+  border: 1px solid #dde7ee;
+  border-radius: 5px;
+  padding: 0 5px;
+  height: 97px;
 }
-.text{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.main-txt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-.main-txt h1{
-    color: var(--Very-Dark);
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.main-txt p{
-    color: var(--clr-gray);
+.main-txt h1 {
+  color: var(--Very-Dark);
 }
-.profile-image{
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
+.main-txt p {
+  color: var(--clr-gray);
 }
-.dot{
-    width: 8px;
-    height: 8px;
-    background-color: var(--Red);
-    border-radius: 50%;
+.time-passed {
+  font-size: 16px;
+  color: var(--clr-gray);
+}
+.profile-image {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--Red);
+  border-radius: 50%;
 }

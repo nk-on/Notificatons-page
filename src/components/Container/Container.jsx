@@ -1,7 +1,8 @@
 import './Container.css';
 import Notification from '../Notification/Noitification';
+import { useState } from 'react';
 export default function Container() {
-  const notifications = [
+  const [notifications, setNotificastions] = useState([
     {
       id: 1,
       notificationText: 'You have a new message from John.',
@@ -41,6 +42,8 @@ export default function Container() {
       picture: 'src/assets/Image-5.png',
       name: 'Alex',
       timePassed: '5 hours ago',
+      message:
+        'Hello, thanks for setting up the Chess Club. I’ve been a member for a few weeks now and I’m already having lots of fun and improving my game.',
     },
     {
       id: 6,
@@ -58,16 +61,27 @@ export default function Container() {
       name: 'Liam',
       timePassed: '12 hours ago',
     },
-  ];
-
+  ]);
   return (
     <div className="container">
       <div className="notifications">
         <div className="title-container">
           <h1 className="title">Notifications</h1>
-          <div className="notifications-count"></div>
+          <div className="notifications-count">{notifications.reduce((count,notification)=>{
+            if(notification.isRead === false){
+              count++;
+            };
+            return count;
+          },0)}</div>
         </div>
-        <button className="mark-read">Mark all as a read</button>
+        <button className="mark-read" onClick={()=>{
+          const updatedNotifications = notifications.map((notification)=>{
+            notification.isRead = true;
+            return notification
+          });
+
+          setNotificastions(updatedNotifications);
+        }}>Mark all as a read</button>
       </div>
       <div className="notifications-container">
         {notifications.map((notification) => {
@@ -79,6 +93,7 @@ export default function Container() {
               timePassed={notification.timePassed}
               isRead={notification.isRead}
               picture={notification.picture}
+              message={notification.message}
             />
           );
         })}
