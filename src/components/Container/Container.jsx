@@ -1,7 +1,7 @@
 import './Container.css';
 import Notification from '../Notification/Noitification';
 import { useState } from 'react';
-import { notificationsArr } from './notifictions';
+import { notificationsArr } from './notifications';
 export default function Container() {
   const [notifications, setNotificastions] = useState(notificationsArr);
   return (
