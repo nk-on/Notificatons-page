@@ -1,36 +1,26 @@
 import './Notification.css';
-export default function Notification({
-  id,
-  setNotificastions,
-  notificationsArr,
-  name,
-  notificationText,
-  timePassed,
-  isRead,
-  picture,
-  message
-}) {
+export default function Notification(props) {
   return (
     <div
       className="notification-container"
-      style={{ backgroundColor: isRead ? '#FFF' : '#F7FAFD' }}
+      style={{ backgroundColor: props.isRead ? '#FFF' : '#F7FAFD' }}
       onClick={()=>{
-        setNotificastions(notificationsArr.map((notification)=>{
-          if(notification.id === id) notification.isRead = true;
+        props.setNotificastions(props.notificationsArr.map((notification)=>{
+          if(notification.id === props.id) notification.isRead = true;
           return notification
         }))
       }}
     >
       <div className="main-txt">
-        <img src={picture} className="profile-image" />
+        <img src={props.picture} className="profile-image" />
 
-        <h1>{name}</h1>
-        <p>{notificationText}</p>
+        <h1>{props.name}</h1>
+        <p>{props.notificationText}</p>
 
-        {!isRead && <div className="dot"></div>}
+        {!props.isRead && <div className="dot"></div>}
       </div>
-      <div className="time-passed">{timePassed}</div>
-      {message && <div className="message">{message}</div>}
+      <div className="time-passed">{props.timePassed}</div>
+      {props.message && <div className="message">{props.message}</div>}
     </div>
   );
 }

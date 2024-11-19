@@ -28,18 +28,21 @@ export default function Container() {
       </div>
       <div className="notifications-container">
         {notifications.map((notification) => {
+          const notificationProps = {
+            setNotificastions,
+            notificationsArr: notifications,
+            id: notification.id,
+            name: notification.name,
+            notificationText: notification.notificationText,
+            timePassed: notification.timePassed,
+            isRead: notification.isRead,
+            picture: notification.picture,
+            message: notification.message,
+          };
           return (
             <Notification
-              key={notification.id}
-              setNotificastions = {setNotificastions}
-              notificationsArr = {notifications}
-              id = {notification.id}
-              name={notification.name}
-              notificationText={notification.notificationText}
-              timePassed={notification.timePassed}
-              isRead={notification.isRead}
-              picture={notification.picture}
-              message={notification.message}
+            key={notification.id}
+             {...notificationProps}
             />
           );
         })}
