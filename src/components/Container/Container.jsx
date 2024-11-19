@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { notificationsArr } from './notifications';
 export default function Container() {
   const [notifications, setNotificastions] = useState(notificationsArr);
+  console.log(notifications)
   return (
     <div className="container">
       <div className="notifications">
@@ -30,6 +31,9 @@ export default function Container() {
           return (
             <Notification
               key={notification.id}
+              setNotificastions = {setNotificastions}
+              notificationsArr = {notifications}
+              id = {notification.id}
               name={notification.name}
               notificationText={notification.notificationText}
               timePassed={notification.timePassed}

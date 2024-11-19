@@ -1,5 +1,8 @@
 import './Notification.css';
 export default function Notification({
+  id,
+  setNotificastions,
+  notificationsArr,
   name,
   notificationText,
   timePassed,
@@ -11,6 +14,12 @@ export default function Notification({
     <div
       className="notification-container"
       style={{ backgroundColor: isRead ? '#FFF' : '#F7FAFD' }}
+      onClick={()=>{
+        setNotificastions(notificationsArr.map((notification)=>{
+          if(notification.id === id) notification.isRead = true;
+          return notification
+        }))
+      }}
     >
       <div className="main-txt">
         <img src={picture} className="profile-image" />
@@ -21,7 +30,6 @@ export default function Notification({
         {!isRead && <div className="dot"></div>}
       </div>
       <div className="time-passed">{timePassed}</div>
-      {console.log(message)}
       {message && <div className="message">{message}</div>}
     </div>
   );

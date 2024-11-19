@@ -5,6 +5,7 @@
   --white:#fff;
 }
 .notification-container {
+  cursor: pointer;
   width: 90%;
   min-height: 80px;
   padding: 5px 5px;
